@@ -12,14 +12,19 @@ coverage_blastx <- data.frame(per_cov, proteins_blastx)
 library(ggplot2)
 library(grid)
 library(gridExtra)
+library(ggsci)
 
-blastp <- ggplot(coverage_blastp, aes(x=per_cov, y=proteins_blastp)) + geom_bar(color ="black",  stat = "identity") +
-  xlab("Percent Transcript Coverage") + theme_bw() + ylab("Transcripts") +  theme(axis.text.x = element_text(size=10)) + 
-  scale_x_continuous(labels=as.character(per_cov), breaks = per_cov)
+blastp <- ggplot(coverage_blastp, aes(x=per_cov, y=proteins_blastp)) + geom_bar(stat = "identity", fill = "grey", color = "black") +
+  xlab("Percent Transcript Coverage") + theme_bw() + ylab("Transcripts") +  theme(axis.text.x = element_text(size=12)) + 
+  scale_x_continuous(labels=as.character(per_cov), breaks = per_cov) + ggtitle("BLASTP") + 
+  theme(plot.title = element_text(hjust = 0.5, size = 13, face = "bold")) +  theme(axis.text.y = element_text(size=12))
 
-blastx <- ggplot(coverage_blastx, aes(x=per_cov, y=proteins_blastx)) + geom_bar(color ="black",  stat = "identity") +
-   theme_bw() + ylab("Transcripts") + xlab("Percent Transcript Coverage") + theme(axis.text.x = element_text(size=10)) +
-scale_x_continuous(labels=as.character(per_cov), breaks = per_cov)
+blastx <- ggplot(coverage_blastx, aes(x=per_cov, y=proteins_blastx)) + geom_bar(stat = "identity", fill= "grey", color = "black" ) +
+   theme_bw() + ylab("Transcripts") + xlab("Percent Transcript Coverage") + theme(axis.text.x = element_text(size=12)) +
+scale_x_continuous(labels=as.character(per_cov), breaks = per_cov) + ggtitle("BLASTX") + 
+  theme(plot.title = element_text(hjust = 0.5, size = 13, face = "bold"))  +  theme(axis.text.y = element_text(size=12))
 
 
-grid.arrange(blastx, blastx, ncol=2)
+grid.arrange(blastp, blastx, ncol=2)
+
+
