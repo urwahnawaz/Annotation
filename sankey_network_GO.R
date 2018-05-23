@@ -11,13 +11,13 @@ nodes = data.frame("names" =c("Biological Processes",
            "Ion binding",
            "DNA binding", 
            "RNA binding"
-           ))
+           ))   #this defines the name of the nodes used 
 
 links = as.data.frame(matrix(c(
   0, 4, 33384,
-  0, 5, 20604,
-  0, 6 ,14018, 
-  0, 7, 15251,
+  0, 5, 20604,   #column one is the node from which you make the network (let's call this the main node)
+  0, 6 ,14018,    #column two is the target node (e.g node 0 will connet to node 6 in this example)
+  0, 7, 15251,    #column three is the value of the target node (which will sum into the main node)
   1, 8, 70774,
   1, 9, 41152, 
   1, 10, 28658, 
