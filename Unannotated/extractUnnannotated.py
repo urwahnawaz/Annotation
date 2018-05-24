@@ -3,7 +3,8 @@ import numpy as np
 
 annotationreport = "trinotate_report.csv"
 dataframe = pd.read_csv(annotationreport)
-
+ 
+  # files in trinotate without annotations have "." in the blastp and/or blastx rows
 blastp = (dataframe.sprot_Top_BLASTP_hit == ".")
 blastx = (dataframe.sprot_Top_BLASTX_hit == ".")
 protein = (dataframe.prot_id == ".")
