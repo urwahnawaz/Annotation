@@ -1,4 +1,6 @@
 #!/usr/bin/perl
+
+#this script is written by Adam J Chouinard 
 use warnings; use Bio::SeqIO;
 ############################################################################################################
 ### ###
