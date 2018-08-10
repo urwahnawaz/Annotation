@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 # plots for eggnog
 
 legend= c("A: RNA processing and modification", "B: Chromatin structure and dynamics",
