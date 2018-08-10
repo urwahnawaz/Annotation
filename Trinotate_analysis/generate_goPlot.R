@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 library(GOplot)
 
 #goplot for embryo
