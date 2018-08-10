@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 #plotting GO terms 
 setwd("~/Documents/Final_thesis/Analysis/Annotation/GO_terms")
 go_slim_terms <- read.csv("go_slim_mappings.csv", header=FALSE)
