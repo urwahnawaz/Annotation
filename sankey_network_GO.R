@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 library(networkD3)
 
 nodes = data.frame("names" =c("Biological Processes",
